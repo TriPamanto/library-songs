@@ -1,0 +1,16 @@
+<?php
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+
+Route::get('/user', function (Request $request) {
+    return $request->user();
+})->middleware('auth:sanctum');
+
+use App\Http\Controllers\ApiSongController;
+
+Route::get('/songs', [ApiSongController::class, 'index']);
+Route::post('/songs', [ApiSongController::class, 'store']);
+Route::get('/songs/{id}', [ApiSongController::class, 'show']);
+Route::put('/songs/{id}', [ApiSongController::class, 'update']);
+Route::delete('/songs/{id}', [ApiSongController::class, 'destroy']);
