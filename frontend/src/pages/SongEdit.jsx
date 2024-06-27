@@ -8,17 +8,19 @@ const SongEdit = () => {
   const [songData, setSongData] = useState({
     title: "",
     artist: "",
-    album: "",
+    // album: "",
     genre: "",
-    release_year: ""
+    year: "",
   });
 
   const loadSong = useCallback(() => {
-    axios.get(`http://127.0.0.1:8000/api/songs/${id}`).then(response => {
-      setSongData(response.data.data);
-    })
-      .catch(error => {
-        alert('Error fetching data: ', error);
+    axios
+      .get(`http://127.0.0.1:8000/api/songs/${id}`)
+      .then((response) => {
+        setSongData(response.data.data);
+      })
+      .catch((error) => {
+        alert("Error fetching data: ", error);
       });
   }, [id]);
 
@@ -30,18 +32,20 @@ const SongEdit = () => {
     const { name, value } = event.target;
     setSongData({
       ...songData,
-      [name]: value
+      [name]: value,
     });
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios.put(`http://127.0.0.1:8000/api/songs/${id}`, songData).then(response => {
-      alert("Song updated successfully");
-      navigate("/song");
-    })
-      .catch(error => {
-        alert('Error updating song: ', error);
+    axios
+      .put(`http://127.0.0.1:8000/api/songs/${id}`, songData)
+      .then((response) => {
+        alert("Song updated successfully");
+        navigate("/song");
+      })
+      .catch((error) => {
+        alert("Error updating song: ", error);
       });
   };
 
@@ -51,27 +55,69 @@ const SongEdit = () => {
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="title">Title</label>
-          <input type="text" className="form-control" id="title" name="title" value={songData.title} onChange={handleInputChange} required />
+          <input
+            type="text"
+            className="form-control"
+            id="title"
+            name="title"
+            value={songData.title}
+            onChange={handleInputChange}
+            required
+          />
         </div>
         <div className="form-group">
           <label htmlFor="artist">Artist</label>
-          <input type="text" className="form-control" id="artist" name="artist" value={songData.artist} onChange={handleInputChange} required />
+          <input
+            type="text"
+            className="form-control"
+            id="artist"
+            name="artist"
+            value={songData.artist}
+            onChange={handleInputChange}
+            required
+          />
         </div>
-        <div className="form-group">
+        {/* <div className="form-group">
           <label htmlFor="album">Album</label>
-          <input type="text" className="form-control" id="album" name="album" value={songData.album} onChange={handleInputChange} required />
-        </div>
+          <input
+            type="text"
+            className="form-control"
+            id="album"
+            name="album"
+            value={songData.album}
+            onChange={handleInputChange}
+            required
+          />
+        </div> */}
         <div className="form-group">
           <label htmlFor="genre">Genre</label>
-          <input type="text" className="form-control" id="genre" name="genre" value={songData.genre} onChange={handleInputChange} required />
+          <input
+            type="text"
+            className="form-control"
+            id="genre"
+            name="genre"
+            value={songData.genre}
+            onChange={handleInputChange}
+            required
+          />
         </div>
         <div className="form-group">
-          <label htmlFor="release_year">Release Year</label>
-          <input type="number" className="form-control" id="release_year" name="release_year" value={songData.release_year} onChange={handleInputChange} required />
+          <label htmlFor="year">Release Year</label>
+          <input
+            type="text"
+            className="form-control"
+            id="year"
+            name="year"
+            value={songData.year}
+            onChange={handleInputChange}
+            required
+          />
         </div>
-        <button type="submit" className="btn btn-primary">Submit</button>
+        <button type="submit" className="btn btn-primary">
+          Submit
+        </button>
       </form>
     </div>
   );
-}
+};
 export default SongEdit;

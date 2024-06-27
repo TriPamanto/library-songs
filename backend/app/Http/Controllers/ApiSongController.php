@@ -12,7 +12,7 @@ class ApiSongController extends Controller
     public function index()
     {
         // Atau bisa menggunakan all() untuk menampilkan semua data
-        $songs = Song::paginate(2);
+        $songs = Song::all();
         return new SongCollection($songs);
     }
     public function show($id)
