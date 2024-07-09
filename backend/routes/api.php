@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\API\AuthController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -14,3 +15,5 @@ Route::post('/songs', [ApiSongController::class, 'store']);
 Route::get('/songs/{id}', [ApiSongController::class, 'show']);
 Route::put('/songs/{id}', [ApiSongController::class, 'update']);
 Route::delete('/songs/{id}', [ApiSongController::class, 'destroy']);
+
+Route::post('/register', [AuthController::class, 'register']);
