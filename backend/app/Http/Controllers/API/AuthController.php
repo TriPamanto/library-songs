@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 // use Validator;
+// use Auth;
 class AuthController extends Controller
 {
     public function register(Request $request)
@@ -30,18 +31,36 @@ class AuthController extends Controller
         $success['remember_token'] = $user->createToken('authToken')->plainTextToken;
         $success['name'] = $user->name;
 
-        // $user = new User([
-        //     'name' => $request->name,
-        //     'email' => $request->email,
-        //     'password' => bcrypt($request->password)
-        // ]);
-
-        // $user->save();
-
         return response()->json([
             'success' => true,
             'message' => 'Successfully created user!',
             'data' => $success
         ], 201);
+    }
+    public function login(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required|string'
+        ]);
+
+        $credentials = request(['email', 'password']);
+
+        if (!auth()->attempt($credentials)) {
+            return response()->json([
+                'message' => 'Unauthorized'
+            ], 401);
+        }
+
+        $user = $request->user();
+
+        $success['remember_token'] = $user->createToken('authToken')->plainTextToken;
+        $success['name'] = $user->name;
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Successfully logged in!',
+            'data' => $success
+        ], 200);
     }
 }

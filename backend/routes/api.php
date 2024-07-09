@@ -17,3 +17,4 @@ Route::put('/songs/{id}', [ApiSongController::class, 'update']);
 Route::delete('/songs/{id}', [ApiSongController::class, 'destroy']);
 
 Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
