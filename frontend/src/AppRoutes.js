@@ -10,6 +10,7 @@ import User from "./pages/User";
 import Borrower from "./pages/Borrower";
 import Borrowing from "./pages/Borrowing";
 
+
 const routesConfig = [
   { path: "/", component: Dashboard },
   // { path: "/song", component: Song },
@@ -20,7 +21,8 @@ const routesConfig = [
   { path: "/song/:id/edit", component: SongEdit },
 
   { path: "/user", component: User },
-  { path: "/borrowing", component: Borrowing }
+  { path: "/borrowing", component: Borrowing },
+
 ];
 
 const AppRoutes = () => {
