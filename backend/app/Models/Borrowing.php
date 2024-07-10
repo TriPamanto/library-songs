@@ -12,7 +12,7 @@ class Borrowing extends Model
     protected $primaryKey = 'id';
     protected $fillable = [
         'user_id',
-        'book_id',
+        'song_id',
     ];
     public function user()
     {
