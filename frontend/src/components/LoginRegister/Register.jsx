@@ -41,7 +41,7 @@ const styles = `
 `;
 
 // Menyematkan CSS ke dalam elemen <style>
-const Login = () => {
+const Register = () => {
   return (
     <>
       <style>{styles}</style>
@@ -50,43 +50,52 @@ const Login = () => {
           <div className="card-body p-0">
             <div className="p-5">
               <div className="text-center">
-                <h1 className="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                <h1 className="h4 text-gray-900 mb-4">Create an Account!</h1>
               </div>
               <form className="user">
+                <div className="form-group">
+                  <input
+                    type="text"
+                    className="form-control form-control-user"
+                    id="exampleFirstName"
+                    placeholder="Full Name"
+                  />
+                </div>
                 <div className="form-group">
                   <input
                     type="email"
                     className="form-control form-control-user"
                     id="exampleInputEmail"
                     aria-describedby="emailHelp"
-                    placeholder="Enter Email Address..."
+                    placeholder="Email Address"
                   />
                 </div>
-                <div className="form-group">
-                  <input
-                    type="password"
-                    className="form-control form-control-user"
-                    id="exampleInputPassword"
-                    placeholder="Password"
-                  />
-                </div>
-                <div className="form-group">
-                  <div className="custom-control custom-checkbox small">
+                <div className="form-group row">
+                  <div className="col-sm-6 mb-3 mb-sm-0">
                     <input
-                      type="checkbox"
-                      className="custom-control-input"
-                      id="customCheck"
+                      type="password"
+                      className="form-control form-control-user"
+                      id="exampleInputPassword"
+                      placeholder="Password"
+                    />
+                  </div>
+                  <div className="col-sm-6">
+                    <input
+                      type="password"
+                      className="form-control form-control-user"
+                      id="exampleRepeatPassword"
+                      placeholder="Repeat Password"
                     />
                   </div>
                 </div>
                 <button className="btn btn-primary btn-user btn-block">
-                  Login
+                  Register Account
                 </button>
                 <hr />
               </form>
               <div className="text-center">
-                <a className="small" href="register.html">
-                  Create an Account!
+                <a className="small" href="#/login">
+                  Already have an account? Login!
                 </a>
               </div>
             </div>
@@ -97,4 +106,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;
