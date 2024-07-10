@@ -1,5 +1,5 @@
-// import React from "react";
-import React, { useState } from "react";
+import React from "react";
+// import React, { useState } from "react";
 
 // CSS dalam tag <style>
 const styles = `
@@ -43,11 +43,11 @@ const styles = `
 
 // Menyematkan CSS ke dalam elemen <style>
 const Login = () => {
-  const [showPassword, setShowPassword] = useState(false);
+  // const [showPassword, setShowPassword] = useState(false);
 
-  const togglePasswordVisibility = () => {
-    setShowPassword((prevState) => !prevState);
-  };
+  // const togglePasswordVisibility = () => {
+  //   setShowPassword((prevState) => !prevState);
+  // };
 
   return (
     <>
