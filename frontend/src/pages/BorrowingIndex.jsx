@@ -39,9 +39,9 @@ const BorrowingIndex = () => {
   return (
     <div className="container-fluid">
       <h1 className="h3 mb-4 text-gray-800">Borrowing Data</h1>
-      {/* <Link to="/borrowing/create" className="btn btn-primary mb-3">
+      <Link to="/borrowings/create" className="btn btn-primary mb-3">
         Create
-      </Link> */}
+      </Link>
       <div className="card shadow mb-4">
         <div className="card-body">
           <div className="table-responsive">
@@ -61,8 +61,8 @@ const BorrowingIndex = () => {
               <tbody>
                 {borrowings.map((borrowing, index) => (
                   <tr key={index}>
-                    <td>{borrowing.user?.name || "Unknown User"}</td>
-                    <td>{borrowing.song?.title || "Unknown Song"}</td>
+                    <td>{borrowing.user.name}</td>
+                    <td>{borrowing.song.title}</td>
                     <td className="text-center">
                       <Link
                         to={`/borrowing/${borrowing.id}/edit`}
