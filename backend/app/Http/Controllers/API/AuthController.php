@@ -107,9 +107,6 @@ class AuthController extends Controller
         ], 200);
     }
 
-
-
-
     public function login(Request $request){
         $validator = Validator::make($request->all(), [
             'email' => 'required|string|email|max:255',
@@ -137,5 +134,16 @@ class AuthController extends Controller
             'token' => $user->createToken('auth_token')->plainTextToken,
         ], 200);
     }
+
+    public function logout(Request $request)
+    {
+        $request->user()->currentAccessToken()->delete();
+
+        return response()->json([
+            'status' => true,
+            'message' => 'Logout successful',
+        ], 200);
+    }
+
 
 }
