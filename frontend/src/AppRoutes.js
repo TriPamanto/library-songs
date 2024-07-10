@@ -9,7 +9,8 @@ import SongEdit from "./pages/SongEdit";
 import BorrowerIndex from "./pages/BorrowerIndex";
 import BorrowerEdit from "./pages/BorrowerEdit";
 
-import Borrowing from "./pages/Borrowing";
+// import Borrowing from "./pages/Borrowing";
+import BorrowingIndex from "./pages/BorrowingIndex";
 
 
 const routesConfig = [
@@ -22,7 +23,8 @@ const routesConfig = [
   { path: "/borrower", component: BorrowerIndex },
   { path: "/user/:id/edit", component: BorrowerEdit },
 
-  { path: "/borrowing", component: Borrowing },
+  // { path: "/borrowing", component: Borrowing },
+  { path: "/borrowings", component: BorrowingIndex },
 
 ];
 

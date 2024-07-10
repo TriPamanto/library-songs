@@ -7,10 +7,16 @@ use Illuminate\Http\Request;
 
 class ApiBorrowingController extends Controller
 {
+    // public function index()
+    // {
+    //     return Borrowing::all();
+    // }
     public function index()
-    {
-        return Borrowing::all();
-    }
+{
+    $borrowings = Borrowing::with(['user', 'song'])->get();
+    return response()->json($borrowings);
+}
+
 
     public function store(Request $request)
     {

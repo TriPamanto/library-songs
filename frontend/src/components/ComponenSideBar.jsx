@@ -14,7 +14,7 @@ function ComponentSideBar() {
         <div className="sidebar-brand-icon rotate-n-15">
           <i className="fas fa-laugh-wink"></i>
         </div>
-        <div className="sidebar-brand-text mx-3">Song Admin</div>
+        <div className="sidebar-brand-text mx-3">Song MATP</div>
       </a>
       <li className="nav-item active">
         <NavLink className="nav-link" to="/#">
@@ -48,7 +48,7 @@ function ComponentSideBar() {
             <NavLink className="collapse-item" to="/borrower">
               Borrower
             </NavLink>
-            <NavLink className="collapse-item" to="/borrowing">
+            <NavLink className="collapse-item" to="/borrowings">
               Borrowing
             </NavLink>
           </div>
