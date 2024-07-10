@@ -45,9 +45,6 @@ function ComponentSideBar() {
             <NavLink className="collapse-item" to="/song">
               Song
             </NavLink>
-            <NavLink className="collapse-item" to="/user">
-              User
-            </NavLink>
             <NavLink className="collapse-item" to="/borrower">
               Borrower
             </NavLink>
