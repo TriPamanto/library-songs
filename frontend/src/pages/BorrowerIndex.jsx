@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const BorrowerIndex = () => {
   const [users, setUsers] = useState([]);
@@ -15,19 +15,19 @@ const BorrowerIndex = () => {
       });
   };
 
-  // const handleDelete = (id) => {
-  //   if (window.confirm("Are you sure you want to delete this user?")) {
-  //     axios
-  //       .delete(`http://127.0.0.1:8000/api/users/${id}`)
-  //       .then((response) => {
-  //         alert("User deleted successfully");
-  //         loadUsers();
-  //       })
-  //       .catch((error) => {
-  //         alert("Error deleting data: ", error);
-  //       });
-  //   }
-  // };
+  const handleDelete = (id) => {
+    if (window.confirm("Are you sure you want to delete this user?")) {
+      axios
+        .delete(`http://127.0.0.1:8000/api/users/${id}`)
+        .then((response) => {
+          alert("User deleted successfully");
+          loadUsers();
+        })
+        .catch((error) => {
+          alert("Error deleting data: ", error);
+        });
+    }
+  };
 
   useEffect(() => {
     loadUsers();
@@ -52,7 +52,7 @@ const BorrowerIndex = () => {
                 <tr className="text-center">
                   <th>Name</th>
                   <th>Email</th>
-                  {/* <th>Actions</th> */}
+                  <th>Actions</th>
                 </tr>
               </thead>
               <tbody>
@@ -60,7 +60,7 @@ const BorrowerIndex = () => {
                   <tr key={index}>
                     <td>{user.name}</td>
                     <td>{user.email}</td>
-                    {/* <td className="text-center">
+                    <td className="text-center">
                       <Link
                         to={`/user/${user.id}/edit`}
                         className="btn btn-warning m-1"
@@ -73,7 +73,7 @@ const BorrowerIndex = () => {
                       >
                         Delete
                       </button>
-                    </td> */}
+                    </td>
                   </tr>
                 ))}
               </tbody>

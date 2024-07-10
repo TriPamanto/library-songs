@@ -7,6 +7,7 @@ import SongCreate from "./pages/SongCreate";
 import SongEdit from "./pages/SongEdit";
 
 import BorrowerIndex from "./pages/BorrowerIndex";
+import BorrowerEdit from "./pages/BorrowerEdit";
 
 import Borrowing from "./pages/Borrowing";
 
@@ -19,6 +20,7 @@ const routesConfig = [
   { path: "/song/:id/edit", component: SongEdit },
 
   { path: "/borrower", component: BorrowerIndex },
+  { path: "/user/:id/edit", component: BorrowerEdit },
 
   { path: "/borrowing", component: Borrowing },
 
