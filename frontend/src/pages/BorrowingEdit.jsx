@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -11,18 +11,6 @@ const BorrowingEdit = () => {
   });
   const [users, setUsers] = useState([]);
   const [songs, setSongs] = useState([]);
-
-  // Function to fetch borrowing details by ID
-  const loadBorrowing = useCallback(() => {
-    axios
-      .get(`http://127.0.0.1:8000/api/borrowings/${id}`)
-      .then((response) => {
-        setBorrowingData(response.data);
-      })
-      .catch((error) => {
-        alert("Error fetching data: ", error);
-      });
-  }, [id]);
 
   // Function to fetch users and songs for dropdowns
   useEffect(() => {
