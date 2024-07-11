@@ -25,7 +25,7 @@ const BorrowingCreate = () => {
     axios
       .get("http://127.0.0.1:8000/api/songs")
       .then((response) => {
-        setSongs(response.data);
+        setSongs(response.data.data);
       })
       .catch((error) => {
         console.error("There was an error fetching songs!", error);
@@ -71,11 +71,12 @@ const BorrowingCreate = () => {
             required
           >
             <option value="">Select User</option>
-            {users.map((user) => (
-              <option key={user.id} value={user.id}>
-                {user.name}
-              </option>
-            ))}
+            {Array.isArray(users) &&
+              users.map((user) => (
+                <option key={user.id} value={user.id}>
+                  {user.name}
+                </option>
+              ))}
           </select>
         </div>
         <div className="form-group">
@@ -89,11 +90,12 @@ const BorrowingCreate = () => {
             required
           >
             <option value="">Select Song</option>
-            {songs.map((song) => (
-              <option key={song.id} value={song.id}>
-                {song.title}
-              </option>
-            ))}
+            {Array.isArray(songs) &&
+              songs.map((song) => (
+                <option key={song.id} value={song.id}>
+                  {song.title}
+                </option>
+              ))}
           </select>
         </div>
         <button type="submit" className="btn btn-primary">
