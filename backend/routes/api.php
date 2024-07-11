@@ -29,15 +29,14 @@ Route::get('/songs/{id}', [ApiSongController::class, 'show']);
 Route::put('/songs/{id}', [ApiSongController::class, 'update']);
 Route::delete('/songs/{id}', [ApiSongController::class, 'destroy']);
 
-Route::get('/borrowings', [ApiBorrowingController::class, 'index']);
-Route::post('/borrowings', [ApiBorrowingController::class, 'store']);
-Route::get('/borrowings/{id}', [ApiBorrowingController::class, 'show']);
-Route::put('/borrowings/{id}', [ApiBorrowingController::class, 'update']);
-Route::delete('/borrowings/{id}', [ApiBorrowingController::class, 'destroy']);
-
 Route::get('/users', [ApiUserController::class, 'index']);
 Route::post('/users', [ApiUserController::class, 'store']);
 Route::get('/users/{id}', [ApiUserController::class, 'show']);
 Route::put('/users/{id}', [ApiUserController::class, 'update']);
 Route::delete('/users/{id}', [ApiUserController::class, 'destroy']);
 
+Route::get('/borrowings', [ApiBorrowingController::class, 'index']);
+Route::post('/borrowings', [ApiBorrowingController::class, 'store']);
+Route::get('/borrowings/{id}', [ApiBorrowingController::class, 'show']);
+Route::put('/borrowings/{id}', [ApiBorrowingController::class, 'update']);
+Route::delete('/borrowings/{id}', [ApiBorrowingController::class, 'destroy']);
