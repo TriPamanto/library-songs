@@ -65,7 +65,7 @@ const BorrowingIndex = () => {
                     <td>{borrowing.song.title}</td>
                     <td className="text-center">
                       <Link
-                        to={`/borrowing/${borrowing.id}/edit`}
+                        to={`/borrowings/${borrowing.id}/edit`}
                         className="btn btn-warning m-1"
                       >
                         Edit

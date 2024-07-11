@@ -11,6 +11,8 @@ import BorrowerEdit from "./pages/BorrowerEdit";
 
 // import Borrowing from "./pages/Borrowing";
 import BorrowingIndex from "./pages/BorrowingIndex";
+import BorrowingCreate from "./pages/BorrowingCreate";
+import BorrowingEdit from "./pages/BorrowingEdit";
 
 
 const routesConfig = [
@@ -25,6 +27,8 @@ const routesConfig = [
 
   // { path: "/borrowing", component: Borrowing },
   { path: "/borrowings", component: BorrowingIndex },
+  { path: "/borrowings/create", component: BorrowingCreate },
+  { path: "/borrowings/:id/edit", component: BorrowingEdit },
 
 ];
 
